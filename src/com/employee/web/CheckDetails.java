@@ -23,11 +23,11 @@ public class CheckDetails extends HttpServlet {
 		RequestDispatcher requestDispatcher;
 		EmployeeDetails employeeDetails = new EmployeeDetails();
 		if (employeeDetails.isValidUser(userId, password)) {
-			out.println("<center><h1>" + "Welcome" + " " + "<font color=red>" + userId + "</font>" + "</h1></center>");
+			out.println("<center><h1> Welcome <font color=red>" + userId + "</font>" + "</h1></center>");
 			requestDispatcher = req.getRequestDispatcher("employeedetails.html");
 			requestDispatcher.include(req, resp);
 		} else {
-			out.println("<p>" + "userId or Password is " + "<font color = red >incorrect!</font>" + "</p>");
+			out.println("<p>userId or Password is " + "<font color = red >incorrect!</font>" + "</p>");
 
 			requestDispatcher = req.getRequestDispatcher("login.html");
 			requestDispatcher.include(req, resp);
